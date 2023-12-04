@@ -75,7 +75,7 @@ router.post('/setProductSteamed', (req, res) => {
     product_id: req.body.product_id
   }
 
-  sql.query('insert into productSteamedList values("?", "?")', [inform.user_id, inform.product_id], (error) => {
+  sql.query('insert into productSteamedList(user_id, product_id) values("?", "?")', [inform.user_id, inform.product_id], (error) => {
     if (!error) {
       res.json();
     }
